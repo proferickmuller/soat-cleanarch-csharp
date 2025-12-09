@@ -27,11 +27,8 @@ public class CsvDataSource : IDataSource
     List<PessoaCsvRecord> _pessoas;
     List<CobrancaCsvRecord> _cobrancas;
 
-    public CsvDataSource()
+    public CsvDataSource(string path)
     {
-        var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-        var path = Path.Combine(desktopPath, "ArquivoCSV", "pessoas.csv");
-        
         using (var reader = new StreamReader(path))
         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
