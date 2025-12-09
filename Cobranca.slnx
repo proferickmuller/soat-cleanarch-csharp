@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Limpa.Tests/Limpa.Tests.csproj" />
+  <Project Path="Limpa/Limpa.csproj" />
+  <Project Path="LimpaCLI.Tests/LimpaCLI.Tests.csproj" />
+  <Project Path="LimpaCLI/LimpaCLI.csproj" />
+</Solution>
