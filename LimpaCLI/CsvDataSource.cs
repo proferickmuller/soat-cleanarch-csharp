@@ -3,6 +3,7 @@ using CsvHelper;
 
 namespace LimpaCLI;
 
+using System.Security.Cryptography;
 using Limpa.Comm;
 
 public class CsvDataSource : IDataSource
@@ -89,5 +90,16 @@ public class CsvDataSource : IDataSource
             Nome = pessoaDto.Nome
         };
         _pessoas.Add(pessoaCsvRecord);
+    }
+
+    public void PessoaDeleteByCpf(string cpf)
+    {
+        var pessoa =  _pessoas.FirstOrDefault(p => p.Cpf == cpf);
+        if (pessoa is null)
+        {
+            throw new Exception("Pessoa com este cpf não existe");
+        }
+        
+        _pessoas.Remove(pessoa);
     }
 }

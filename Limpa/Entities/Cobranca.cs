@@ -2,12 +2,12 @@
 
 public class Cobranca
 {
-    private Cobranca() {}
-    
+    private Cobranca() { }
+
     public required Pessoa Cedente { get; set; }    // quem cobra
     public required Pessoa Sacado { get; set; }      // quem paga    
-    
-    public required string Identificacao  { get; set; }
+
+    public required string Identificacao { get; set; }
 
     public required decimal Valor
     {
@@ -42,7 +42,7 @@ public class Cobranca
         get;
         set
         {
-            
+
             if (value >= DataVencimento)
             {
                 throw new DataRegistroInvalidoException(nameof(DataRegistro));
@@ -64,16 +64,16 @@ public class Cobranca
             field = value;
         }
     }
-    
-    
+
+
 
     public static Cobranca Create(
         string identificacao,
-        Pessoa cedente, 
-        Pessoa sacado, 
-        decimal valor, 
-        DateTime dataVencimento, 
-        DateTime? dataRegistro = null, 
+        Pessoa cedente,
+        Pessoa sacado,
+        decimal valor,
+        DateTime dataVencimento,
+        DateTime? dataRegistro = null,
         DateTime? dataPagamento = null)
     {
         return new Cobranca
@@ -83,10 +83,10 @@ public class Cobranca
             Sacado = sacado,
             Valor = valor,
             DataVencimento = dataVencimento,
-            DataRegistro = dataRegistro ?? DateTime.Now,   
+            DataRegistro = dataRegistro ?? DateTime.Now,
             DataPagamento = dataPagamento
         };
-        
+
     }
 }
 
@@ -94,14 +94,14 @@ public class Cobranca
 
 public class DataRegistroInvalidoException : Exception
 {
-    public DataRegistroInvalidoException(string msg) : base(msg) {}
-    public DataRegistroInvalidoException(string msg, Exception inner) : base(msg, inner) {}
-    public DataRegistroInvalidoException() {}
+    public DataRegistroInvalidoException(string msg) : base(msg) { }
+    public DataRegistroInvalidoException(string msg, Exception inner) : base(msg, inner) { }
+    public DataRegistroInvalidoException() { }
 }
 
 public class DataVencimentoInvalidoException : Exception
 {
-    public DataVencimentoInvalidoException(string msg) : base(msg) {}
-    public DataVencimentoInvalidoException(string msg, Exception inner) : base(msg, inner) {}
-    public DataVencimentoInvalidoException() {}
+    public DataVencimentoInvalidoException(string msg) : base(msg) { }
+    public DataVencimentoInvalidoException(string msg, Exception inner) : base(msg, inner) { }
+    public DataVencimentoInvalidoException() { }
 }

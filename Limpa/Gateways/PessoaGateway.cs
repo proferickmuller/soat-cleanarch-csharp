@@ -1,7 +1,4 @@
 ﻿using Limpa.Comm;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Limpa.Entities;
 
 namespace Limpa.Gateways
@@ -12,7 +9,6 @@ namespace Limpa.Gateways
 
         internal Pessoa? ObterPorCpf(string cpf)
         {
-            // var pessoaDto = DataSource.PessoaByCpf(cpf);
             var pessoaDto = DataSource.GetPessoa(cpf: cpf);
             if (pessoaDto is null)
             {
@@ -63,6 +59,11 @@ namespace Limpa.Gateways
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        internal void Remover(string cpf)
+        {
+            DataSource.PessoaDeleteByCpf(cpf);
         }
     }
 }

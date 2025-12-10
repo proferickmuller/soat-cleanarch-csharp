@@ -7,4 +7,5 @@ public interface IDataSource
     List<CobrancaDto> GetCobrancaList(string sacado, DateTime? dataInicio);
     void NewCobranca(CobrancaDto cobrancaDto);
     void NewPessoa(PessoaDto pessoaDto);
+    void PessoaDeleteByCpf(string cpf);
 }

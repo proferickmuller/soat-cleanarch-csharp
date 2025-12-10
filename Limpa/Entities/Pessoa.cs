@@ -25,6 +25,8 @@
             get =>  _cpf;
             set
             {
+                // validar se o numero do cpf está válido. 
+                
                 if (string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException("Campo Nome não pode estar vazio.");
