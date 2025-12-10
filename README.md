@@ -9,3 +9,8 @@
 - `LimpaCLI` - Implementação de CLI que consome a biblioteca `Limpa`
 - `LimpaCLI.Tests` - Testes para a abertura do arquivo CSV
 
+Em `/dados` está o arquivo csv inicial.
+
+### Para continuar
+
+Faça o clone e inicie a partir da tag `base`
